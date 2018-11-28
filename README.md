@@ -1,25 +1,25 @@
 ## Usage
-Login to postgres shell
+1. Login to postgres shell
 
 `sudo su - postgres`
 
-Start psql session
+2. Start psql session
 
 `psql`
 
-Create database
+3. Create database
 
 `CREATE DATABASE api_geocode;`
 
-Create user for django to connect with
+4. Create user for django to connect with
 
 `CREATE USER channelfactory WITH PASSWORD 'channelfactory';`
 
-Allow channelfactory user to create test db
+5. Allow channelfactory user to create test db
 
 `ALTER USER channelfactory CREATEDB;`
 
-Replace Google Api Key in /channelfactory/api/utils Line 7
+6. Replace Google Api Key in /channelfactory/api/utils Line 7
 
     import requests
     import json
@@ -30,19 +30,19 @@ Replace Google Api Key in /channelfactory/api/utils Line 7
     GOOGLE_API_KEY = YOUR_API_KEY
     GoogleApiBaseUrl = 'https://maps.googleapis.com/maps/api/geocode/json?'
 
-Make migration
+7. Make migration
 
 `python manage.py makemigrations api`
 
-Migrate
+8. Migrate
 
 `python manage.py migrate`
 
-Run server
+9. Run server
 
 `python manage.py runserver`
 
-Open browser to localhost:8000/api/geocode
+10. Open browser to localhost:8000/api/geocode
 
 ## Run tests
 `python manage.py test api`
