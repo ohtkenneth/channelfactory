@@ -21,14 +21,14 @@
 
 6. Replace Google Api Key in /channelfactory/api/utils Line 7
 
-    import requests
-    import json
+        import requests
+        import json
 
-    from math import cos, asin, sqrt
-    from .models import Geocode
+        from math import cos, asin, sqrt
+        from .models import Geocode
 
-    GOOGLE_API_KEY = YOUR_API_KEY
-    GoogleApiBaseUrl = 'https://maps.googleapis.com/maps/api/geocode/json?'
+        GOOGLE_API_KEY = YOUR_API_KEY
+        GoogleApiBaseUrl = 'https://maps.googleapis.com/maps/api/geocode/json?'
 
 7. Make migration
 
