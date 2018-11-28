@@ -1,4 +1,4 @@
-### Instructions
+## Usage
 Login to postgres shell
 
 `sudo su - postgres`
@@ -44,8 +44,8 @@ Run server
 
 Open browser to localhost:8000/api/geocode
 
-### Run tests
+## Run tests
 `python manage.py test api`
 
-### Dependencies
+## Dependencies
 PostgreSQL, psycopg2
