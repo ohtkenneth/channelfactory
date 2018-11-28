@@ -1,0 +1,10 @@
+{% if geocode %}
+  <div class="geocode">
+    {% if heading %}
+    <h1 class='heading--primary'>{{ heading }}</h1>
+    {% endif %}
+    <h1>Address: {{ geocode.address_string }}</h1>
+    <h1>Latitude: {{ geocode.latitude }}</h1>
+    <h1>Longitude: {{ geocode.longitude }}</h1>
+  </div>
+{% endif %}

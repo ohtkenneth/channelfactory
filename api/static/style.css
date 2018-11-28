@@ -1,0 +1,73 @@
+*,
+*::after,
+*::before  {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav {
+  display: flex;
+  padding-bottom: 2rem;
+}
+
+.nav__link {
+  padding-right: 1.5rem;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.input--text {
+  width: 30rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+}
+
+.btn, .btn:link, .btn:visited {
+  display: inline-block;
+  padding: 1rem 2rem;
+  text-decoration: none; 
+  border-radius: 10px;
+  text-align: center;
+}
+
+.btn--submit {
+  background-color: #3ba247;
+  color: #fff;
+}
+
+.heading--primary {
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+
+.heading--secondary {
+  font-size: 1.5rem;
+}
+
+.result {
+  margin-top: 2rem;
+}
+
+.geocode {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 40%;
+  height: 15rem;
+  margin: 2.5rem 0;
+  padding: 1rem;
+  border: 1px solid #000;
+  border-radius: 5px;
+}

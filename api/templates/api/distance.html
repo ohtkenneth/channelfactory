@@ -1,0 +1,22 @@
+{% extends 'api/index.html' %}
+
+{% block content %}
+  <form action="/api/geocode/distance/query" method="get">
+    <h1 class="heading--primary">Calculate geometric distance between two locations</h1>
+
+    <input class="input input--text" type="text" name="start" placeholder="Input start address"/>
+    <br/>
+    <input class="input input--text" type="text" name="destination" placeholder="Input destination address"/>
+    <br/>
+    <input class="btn btn--submit" type="submit" value="Geocode">
+  </form>
+
+  {% if distance %}
+    <section class="result">
+      {% include 'api/geocode.html' with geocode=start heading='Start' %}
+      {% include 'api/geocode.html' with geocode=end heading='Destination' %}
+      <h4 class="heading--primary">Geometric distance: {{ distance }}</h4>
+    </section>
+  {% endif %}
+
+{% endblock %}

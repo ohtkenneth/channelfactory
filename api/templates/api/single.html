@@ -1,0 +1,17 @@
+{% extends 'api/index.html' %}
+
+{% block content %}
+  <form action="/api/geocode/single/query" method="get">
+    <h1 class="heading--primary">Get geocode of address</h1>
+    <input class="input input--text" type="text" name="location" placeholder="Input address location"/>
+    <br/>
+    <input class="btn btn--submit" type="submit" value="Geocode">
+  </form>
+
+  {% if result %}
+    <section class="result">
+      {% include 'api/geocode.html' with geocode=result %}
+    </section>  
+  {% endif %}
+
+{% endblock %}
