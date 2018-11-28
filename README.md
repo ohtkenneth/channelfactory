@@ -3,7 +3,7 @@ Login to postgres shell
 
 `sudo su - postgres`
 
-Log into postgres session
+Start psql session
 
 `psql`
 
