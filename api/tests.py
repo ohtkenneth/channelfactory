@@ -1,7 +1,7 @@
 from django.test import TestCase
 from .models import Geocode
 
-from .utils import getLocation, saveLocation, calculateGeometricDistance
+from .utils import get_location, save_location, calculate_geometric_distance
 # Create your tests here.
 
 class UtilityFunctionsTests(TestCase):
@@ -11,7 +11,7 @@ class UtilityFunctionsTests(TestCase):
     """
 
     searchTerm = 'test'
-    result = getLocation(searchTerm, 'address')
+    result = get_location(searchTerm, 'address')
 
     self.assertIs('search_term' in result, True)
     self.assertIs('result' in result, True)
@@ -22,7 +22,7 @@ class UtilityFunctionsTests(TestCase):
     """
 
     searchTerm = 'originalSearchTerm'
-    result = getLocation(searchTerm, 'address')
+    result = get_location(searchTerm, 'address')
 
     self.assertIs(result['search_term'], searchTerm)
 
@@ -31,7 +31,7 @@ class UtilityFunctionsTests(TestCase):
       saveLocation should return an instantiation of Geocode class model
     """
 
-    model = saveLocation(getLocation('Los+Angeles', 'address'))['result']
+    model = save_location(get_location('Los+Angeles', 'address'))['result']
 
     self.assertIs(isinstance(model, Geocode), True)
 
@@ -40,7 +40,7 @@ class UtilityFunctionsTests(TestCase):
       saveLocation should return result Geocode with None values if no search results
     """
 
-    model = saveLocation(getLocation('***', 'address'))['result']
+    model = save_location(get_location('***', 'address'))['result']
 
     self.assertIs(model.search_term, '***')
     self.assertIs(model.address_string, None)

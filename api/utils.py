@@ -9,7 +9,7 @@ GoogleApiBaseUrl = 'https://maps.googleapis.com/maps/api/geocode/json?'
 
 # checks db for location first before making api call
 # type should either be address or latlng
-def getLocation(searchTerm, locationType):
+def get_location(searchTerm, locationType):
   result = Geocode.objects.filter(search_term = searchTerm)
 
   if result.exists():
@@ -25,7 +25,7 @@ def getLocation(searchTerm, locationType):
     return { 'search_term': searchTerm, 'result': result }
 
 # extracts pertinent data from json response and saves to db
-def saveLocation(data):
+def save_location(data):
   # if geodata is empty, then save as None in database
   searchTerm = data['search_term']
   geodata = data['result']
@@ -66,7 +66,7 @@ def saveLocation(data):
     return { 'result': newGeocode }
 
 # returns distance in km
-def calculateGeometricDistance(lat1, lon1, lat2, lon2):
+def calculate_geometric_distance(lat1, lon1, lat2, lon2):
   p = 0.017453292519943295 
   a = 0.5 - cos((lat2 - lat1) * p)/2 + cos(lat1 * p) * cos(lat2 * p) * (1 - cos((lon2 - lon1) * p)) / 2
   
